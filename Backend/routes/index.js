@@ -12,6 +12,7 @@ const signupSchema = zod.Schema({
 });
 
 router.use("/user", userRouter);
+router.use("/account", accountRouter);
 router.post("/signup", async (req, res) => {
   const { success } = signupSchema.safeParse(req.body);
   if (!success) {
